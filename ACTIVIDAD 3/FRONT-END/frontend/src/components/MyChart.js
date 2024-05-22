@@ -26,8 +26,7 @@ ChartJS.register(
 const MyChart = () => {
     const data = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-            {
+        datasets: [{
                 label: 'My First Dataset',
                 data: [65, 59, 80, 81, 56, 55, 40],
                 fill: false,

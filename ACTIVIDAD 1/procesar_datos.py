@@ -14,13 +14,10 @@ df.columns = df.columns.str.title()
 # Mostrar nombres de las columnas convertidas
 print("Columnas convertidas del DataFrame:", df.columns)
 # Consulta 1: Top 5 Departamentos con mayor cantidad de eventos
-
 # Asegurarse de que la columna Fecha es de tipo datetime
 df['Fecha'] = pd.to_datetime(df['Fecha'], format='%m/%d/%Y %I:%M:%S %p')
-
 # Extraer el año de la columna Fecha
 df['Año'] = df['Fecha'].dt.year
-
 # Extraer el mes de la columna Fecha
 df['Mes'] = df['Fecha'].dt.month
 
