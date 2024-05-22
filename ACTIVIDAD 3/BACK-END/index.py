@@ -1,12 +1,17 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS, cross_origin
 import pandas as pd
 
+
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 # Load the data from CSV
 data = pd.read_csv('processed_data.csv')
 
 # Convert the data to a dictionary for easy access
+
 data_dict = data.to_dict(orient='records')
 
 @app.route('/')
@@ -15,11 +20,22 @@ def home():
 
 # Endpoint to get all events data
 @app.route('/events', methods=['GET'])
+@cross_origin()
 def get_events():
     return jsonify(data_dict)
 
+
+@app.route('/events/top5',methods=['GET'])
+@cross_origin()
+def get_top_5_events():
+  # Sort the department counts in descending order (highest to lowest)
+  top_departments = data['Departamento'].value_counts().head(5)
+  sorted_dict = top_departments.to_dict()
+  return jsonify(sorted_dict)
+
 # Endpoint to get events filtered by year
 @app.route('/events/year/<int:year>', methods=['GET'])
+@cross_origin()
 def get_events_by_year(year):
     filtered_data = [event for event in data_dict if event['Año'] == year]
     return jsonify(filtered_data)

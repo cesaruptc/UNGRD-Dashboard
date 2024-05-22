@@ -4,12 +4,12 @@ import Querys from './pages/Querys';
 import Consulta2 from './components/Consulta2/Consulta2';
 
 function App() {
-  return (
-    <div className="App">
-      <Querys />
-
-    </div>
-  );
+    return (
+        <div className="App">
+            <Querys />
+            <Consulta2 />
+        </div>
+    );
 }
 
 export default App;
