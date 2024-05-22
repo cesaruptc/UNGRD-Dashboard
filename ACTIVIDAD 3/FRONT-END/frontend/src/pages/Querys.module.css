@@ -1,0 +1,15 @@
+/* src/components/Querys.module.css */
+.reports {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: calc(100% - 40px);
+    margin: 20px;
+    max-width: 100%;
+}
+
+.report {
+    flex: 1;
+    background-color: rgba(231, 226, 224, 0.7);
+    width: 100%;
+}

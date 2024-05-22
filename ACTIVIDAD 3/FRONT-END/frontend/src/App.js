@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Home from './components/Home';
-import MyChart from './components/MyChart';
+import Querys from './pages/Querys';
+import Consulta2 from './components/Consulta2/Consulta2';
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <MyChart/>
+      <Querys />
+
     </div>
   );
 }
