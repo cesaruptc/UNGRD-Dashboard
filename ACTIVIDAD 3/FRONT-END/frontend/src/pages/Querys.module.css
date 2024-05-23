@@ -1,6 +1,7 @@
 /* src/components/Querys.module.css */
 .reports {
     display: flex;
+
     justify-content: space-between;
     gap: 20px;
     width: calc(100% - 40px);

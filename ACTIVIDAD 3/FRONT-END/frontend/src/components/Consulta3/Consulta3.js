@@ -1,4 +1,4 @@
-// src/Top5EventsChart.js
+// src/Consulta3.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Bar } from 'react-chartjs-2';
@@ -22,7 +22,7 @@ ChartJS.register(
     Legend
 );
 
-const Top5EventsChart = () => {
+const Consulta3 = () => {
     const [chartData, setChartData] = useState({
         labels: [],
         datasets: [
@@ -85,4 +85,4 @@ const Top5EventsChart = () => {
     );
 };
 
-export default Top5EventsChart;
+export default Consulta3;

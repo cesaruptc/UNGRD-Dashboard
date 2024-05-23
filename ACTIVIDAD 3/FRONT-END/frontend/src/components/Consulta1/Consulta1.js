@@ -1,8 +1,8 @@
-// src/Top5Events.js
+// src/Consulta1.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const Top5Events = () => {
+const Consulta1 = () => {
     const [top5Events, setTop5Events] = useState([]);
 
     useEffect(() => {
@@ -27,4 +27,4 @@ const Top5Events = () => {
     );
 };
 
-export default Top5Events;
+export default Consulta1;

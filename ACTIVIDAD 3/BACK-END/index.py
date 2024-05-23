@@ -10,7 +10,13 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 # Load the data from CSV
 data = pd.read_csv('processed_data.csv')
 
+#SE REALIZA UNA LIMPIEZA PARA LA CONSULTA 6
+data['Recursos Ejecutados'] = data['Recursos Ejecutados'].str.replace(r'[\$,]', '', regex=True).str.strip()
+data['Valor Kit De Alimento'] = data['Valor Kit De Alimento'].str.replace(r'[\$,]', '', regex=True).str.strip()
+data['Valor Materiales De Construccion'] = data['Valor Materiales De Construccion'].str.replace(r'[\$,]', '', regex=True).str.strip()
 # Convert the data to a dictionary for easy access
+print(data)
+
 
 data_dict = data.to_dict(orient='records')
 
@@ -24,6 +30,22 @@ def home():
 def get_events():
     return jsonify(data_dict)
 
+# departamento que más “movimientos en masa” reportó en el periodo 2019, 2020 
+# y 2021
+@app.route('/events/movimientos_en_masa', methods=['GET'])
+@cross_origin()
+def get_departemnts_by_mass_movements():
+    movimientos_en_masa = data[(data['Año'] >= 2019) & (data['Año'] <= 2021)]
+    dept_movimientos_masa = movimientos_en_masa[movimientos_en_masa['Evento'] == 'MOVIMIENTO EN MASA']['Departamento'].value_counts().idxmax()
+    print("Departamento con más movimientos en masa reportados (2019-2021):", dept_movimientos_masa)
+    return jsonify(dept_movimientos_masa)
+
+
+@app.route('/events/', methods=['GET'])
+    data['Recursos Ejecutados'] = pd.to_numeric(data['Recursos Ejecutados'], errors='coerce').fillna(0)
+    data['Valor Kit De Alimento'] = pd.to_numeric(data['Valor Kit De Alimento'], errors='coerce').fillna(0)
+    data['Valor Materiales De Construccion'] = pd.to_numeric(data['Valor Materiales De Construccion'], errors='coerce').fillna(0)
+    return jsonify()
 
 @app.route('/events/top5',methods=['GET'])
 @cross_origin()

@@ -53,7 +53,6 @@ dept_movimientos_masa = movimientos_en_masa[movimientos_en_masa['Evento'] == 'MO
 print("Departamento con más movimientos en masa reportados (2019-2021):", dept_movimientos_masa)
 
 # Consulta 6: Porcentaje de recursos ejecutados por la UNGRD en el año 2019 en "kits de alimentos" y "materiales de construcción"
-print("\n CONSULTA-----6=============D  \n")
 df['Recursos Ejecutados'] = df['Recursos Ejecutados'].str.replace(r'[\$,]', '', regex=True).str.strip()
 df['Valor Kit De Alimento'] = df['Valor Kit De Alimento'].str.replace(r'[\$,]', '', regex=True).str.strip()
 df['Valor Materiales De Construccion'] = df['Valor Materiales De Construccion'].str.replace(r'[\$,]', '', regex=True).str.strip()
