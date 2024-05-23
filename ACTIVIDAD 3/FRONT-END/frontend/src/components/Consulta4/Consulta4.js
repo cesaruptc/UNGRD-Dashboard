@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import styles from "./Consulta4.module.css"
 
 const Consulta4 = () => {
     const [consultaData, setConsultaData] = useState({});
@@ -24,7 +25,7 @@ const Consulta4 = () => {
             <h1>Datos del año {selectedYear}</h1>
             <div>
                 <label htmlFor="year-select">Selecciona un año:</label>
-                <select id="year-select" value={selectedYear} onChange={handleYearChange}>
+                <select className={styles.select} id="year-select" value={selectedYear} onChange={handleYearChange}>
                     <option value={2019}>2019</option>
                     <option value={2020}>2020</option>
                     <option value={2021}>2021</option>
@@ -39,7 +40,7 @@ const Consulta4 = () => {
                 <p>{consultaData.tipo_evento_max_heridos}</p>
             </div>
             <div>
-                <h2>Tipo de evento con mayor cantidad de hectáreas afectadas en {selectedYear}:</h2>
+                <h2>Consulta 4: Evento con mayor cantidad de hectáreas afectadas en {selectedYear}:</h2>
                 <p>{consultaData.tipo_evento_max_hectareas}</p>
             </div>
         </div>
