@@ -10,14 +10,6 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 # Load the data from CSV
 data = pd.read_csv('processed_data.csv')
 
-#SE REALIZA UNA LIMPIEZA PARA LA CONSULTA 6
-data['Recursos Ejecutados'] = data['Recursos Ejecutados'].str.replace(r'[\$,]', '', regex=True).str.strip()
-data['Valor Kit De Alimento'] = data['Valor Kit De Alimento'].str.replace(r'[\$,]', '', regex=True).str.strip()
-data['Valor Materiales De Construccion'] = data['Valor Materiales De Construccion'].str.replace(r'[\$,]', '', regex=True).str.strip()
-# Convert the data to a dictionary for easy access
-print(data)
-
-
 data_dict = data.to_dict(orient='records')
 
 @app.route('/')
@@ -41,11 +33,34 @@ def get_departemnts_by_mass_movements():
     return jsonify(dept_movimientos_masa)
 
 
-@app.route('/events/', methods=['GET'])
+@app.route('/events/consulta6', methods=['GET'])
+@cross_origin()
+def get_total_resources_minus_foodand_mats():
     data['Recursos Ejecutados'] = pd.to_numeric(data['Recursos Ejecutados'], errors='coerce').fillna(0)
     data['Valor Kit De Alimento'] = pd.to_numeric(data['Valor Kit De Alimento'], errors='coerce').fillna(0)
     data['Valor Materiales De Construccion'] = pd.to_numeric(data['Valor Materiales De Construccion'], errors='coerce').fillna(0)
-    return jsonify()
+
+    df_2019 = data[data['Año'] == 2019]
+    total_recursos_2019 = df_2019['Recursos Ejecutados'].sum()
+    print(" \n\n\n\n TOTAL RTECURSOS EJECUTADOS 2019 XDD" + str(total_recursos_2019))
+
+    # Calcular los recursos específicos para cada categoría en 2019
+    recursos_kits_2019 = df_2019['Valor Kit De Alimento'].sum()
+    recursos_materiales_2019 = df_2019['Valor Materiales De Construccion'].sum()
+    recursos_minus_foodand_mats = total_recursos_2019 - recursos_kits_2019 - recursos_materiales_2019
+    
+    return jsonify({"otros_recursos": recursos_minus_foodand_mats,
+                    "materiales":recursos_materiales_2019,
+                    "kits":recursos_kits_2019})
+
+#CONSULTA 8
+@app.route('/events/consulta8',methods=['GET'])
+@cross_origin()
+def get_events_per_month():
+    data['Fecha'] = pd.to_datetime(data['Fecha'])  # Assuming 'Fecha' has date strings
+    events_per_month = data['Fecha'].dt.to_period('M').dt.strftime('%Y-%m').value_counts().sort_index()
+    return jsonify(events_per_month.to_dict())
+
 
 @app.route('/events/top5',methods=['GET'])
 @cross_origin()

@@ -1,54 +1,63 @@
-import React, { useEffect, useState } from 'react';
+// src/components/ResourcePieChart.js
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Chart from 'react-apexcharts';
 
 const Consulta6 = () => {
-    const [eventData, setEventData] = useState([]);
-    const [eventCounts, setEventCounts] = useState({});
+    const [chartData, setChartData] = useState({
+        series: [],
+        options: {
+            chart: {
+                type: 'pie',
+            },
+            labels: [],
+            title: {
+                text: 'Resource Distribution',
+                align: 'center'
+            },
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 200
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }]
+        }
+    });
 
     useEffect(() => {
-        axios.get('https://ceesar1703.pythonanywhere.com/events')
+        axios.get('http://127.0.0.1:5000/events/consulta6')
             .then(response => {
-                setEventData(response.data);
+                const data = response.data;
+                const series = Object.values(data);
+                const labels = Object.keys(data);
+
+                setChartData({
+                    series: series,
+                    options: {
+                        ...chartData.options,
+                        labels: labels
+                    }
+                });
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
             });
     }, []);
 
-    useEffect(() => {
-        const counts = {};
-        eventData.forEach(event => {
-            const year = event.Año;
-            counts[year] = (counts[year] || 0) + 1;
-        });
-        setEventCounts(counts);
-    }, [eventData]);
-
-    useEffect(() => {
-        console.log("EventCounts: ", eventCounts);
-    }, [eventCounts]);
-
-    const options = {
-        chart: {
-            type: 'line'
-        },
-        xaxis: {
-            categories: Object.keys(eventCounts)
-        },
-        colors: ['#1F3075'],
-
-    };
-
-    const series = [{
-        name: `Eventos: `,
-        data: Object.values(eventCounts)
-    }];
-
     return (
         <div>
-            <h1>Eventos por año</h1>
-            <Chart options={options} series={series} type="line" height={350} />
+            <h2>Resource Distribution</h2>
+            <Chart
+                options={chartData.options}
+                series={chartData.series}
+                type="pie"
+                width="500"
+            />
         </div>
     );
 };
