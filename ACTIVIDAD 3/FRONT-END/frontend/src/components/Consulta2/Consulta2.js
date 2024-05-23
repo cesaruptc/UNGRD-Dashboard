@@ -47,7 +47,7 @@ const Consulta2 = () => {
 
     return (
         <div>
-            <h1>Eventos por año</h1>
+            <h1>Consulta 2: Eventos por año</h1>
             <Chart options={options} series={series} type="line" height={350} />
         </div>
     );
