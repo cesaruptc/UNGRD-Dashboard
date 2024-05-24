@@ -18,3 +18,23 @@
     flex-basis: calc(50% - 10px);
     background-color: rgba(231, 226, 224, 0.7);
 }
+
+
+.title {
+    color: white;
+    font-family: "Times New Roman", sans-serif, bold;
+    font-size: 50px;
+    margin: 50px;
+    font-weight: bold;
+    text-shadow:
+            0 0 5px rgba(6,93,131,1),
+            0 0 10px rgba(6,93,131,1),
+            0 0 20px rgba(6,93,131,1),
+            0 0 40px rgba(7, 44, 60,1),
+            0 0 80px rgba(7, 44, 60,1),
+            0 0 90px rgba(7, 44, 60,1),
+            0 0 100px rgba(7, 44, 60,1),
+            0 0 140px rgba(7, 44, 60,1),
+            0 0 180px rgba(7, 44, 60,1);
+}
+

@@ -1,6 +1,7 @@
 // src/Consulta1.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import styles from "./Consulta1.module.css";
 
 const Consulta1 = () => {
     const [top5Events, setTop5Events] = useState([]);
@@ -17,10 +18,10 @@ const Consulta1 = () => {
 
     return (
         <div>
-            <h1>Top 5 Events</h1>
+            <h1 className={styles.title}>Consulta 1: Top 5 de eventos</h1>
             <ul>
                 {Object.entries(top5Events).map(([department, count]) => (
-                    <li key={department}>{department}: {count}</li>
+                    <li className={styles.elements} key={department}>{department}: {count}</li>
                 ))}
             </ul>
         </div>

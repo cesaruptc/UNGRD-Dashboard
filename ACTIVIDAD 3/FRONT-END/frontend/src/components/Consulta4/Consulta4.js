@@ -22,9 +22,9 @@ const Consulta4 = () => {
 
     return (
         <div>
-            <h1>Datos del año {selectedYear}</h1>
+            <h1 className={styles.title}>Consulta 4: Datos del año {selectedYear}</h1>
             <div>
-                <label htmlFor="year-select">Selecciona un año:</label>
+                <label className={styles.subtitle} htmlFor="year-select">Selecciona un año:</label>
                 <select className={styles.select} id="year-select" value={selectedYear} onChange={handleYearChange}>
                     <option value={2019}>2019</option>
                     <option value={2020}>2020</option>
@@ -32,15 +32,15 @@ const Consulta4 = () => {
                 </select>
             </div>
             <div>
-                <h2>Tipo de evento con más fallecidos en {selectedYear}:</h2>
+                <h2 className={styles.subtitle}>Tipo de evento con más fallecidos en {selectedYear}:</h2>
                 <p>{consultaData.tipo_evento_max_fallecidos}</p>
             </div>
             <div>
-                <h2>Tipo de evento con más heridos en {selectedYear}:</h2>
+                <h2 className={styles.subtitle}>Tipo de evento con más heridos en {selectedYear}:</h2>
                 <p>{consultaData.tipo_evento_max_heridos}</p>
             </div>
             <div>
-                <h2>Consulta 4: Evento con mayor cantidad de hectáreas afectadas en {selectedYear}:</h2>
+                <h2 className={styles.subtitle}>Evento con mayor cantidad de hectáreas afectadas en {selectedYear}:</h2>
                 <p>{consultaData.tipo_evento_max_hectareas}</p>
             </div>
         </div>

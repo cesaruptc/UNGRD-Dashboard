@@ -31,8 +31,8 @@ const Consulta9 = () => {
 
     return (
         <div>
-            <h1>Consulta 9 - Lugar con mayor cantidad de familias afectadas en el año {year}</h1>
-            <label htmlFor="year">Select Year: </label>
+            <h1 className={styles.title}>Consulta 9 - Lugar con mayor cantidad de familias afectadas en el año {year}</h1>
+            <label className={styles.subtitle} htmlFor="year">Select Year: </label>
             <select className={styles.select} id="year" value={year} onChange={handleChangeYear}>
                 <option value={2019}>2019</option>
                 <option value={2020}>2020</option>
@@ -43,15 +43,15 @@ const Consulta9 = () => {
             {!loading && !error && (
                 <div>
                     <div>
-                        <h2>Municipio:</h2>
+                        <h2 className={styles.subtitle}>Municipio:</h2>
                         <p>{consultaData.municipio_max_familias}</p>
                     </div>
                     <div>
-                        <h2>Departamento:</h2>
+                        <h2 className={styles.subtitle}>Departamento:</h2>
                         <p>{consultaData.departamento_max_familias}</p>
                     </div>
                     <div>
-                        <h2>Total de familias afectadas:</h2>
+                        <h2 className={styles.subtitle}>Total de familias afectadas:</h2>
                         <p>{consultaData.max_familias_affected}</p>
                     </div>
                 </div>

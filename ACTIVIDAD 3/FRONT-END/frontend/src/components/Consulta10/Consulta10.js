@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Pie } from 'react-chartjs-2';
 import 'chart.js/auto';
+import styles from "./Consulta10.module.css"
 
 const Consulta10 = () => {
     const [chartData, setChartData] = useState(null);
@@ -57,7 +58,7 @@ const Consulta10 = () => {
 
     return (
         <div>
-            <h2>Consulta 10 - Porcentaje de Eventos por Año Reportados por la UNGRD</h2>
+            <h2 className={styles.title}>Consulta 10 - Porcentaje de Eventos por Año Reportados por la UNGRD</h2>
             <div style={{ width: '50%', margin: '0 auto' }}>
                 {chartData && <Pie data={chartData} />}
             </div>

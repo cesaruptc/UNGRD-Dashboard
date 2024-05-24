@@ -22,9 +22,9 @@ const Consulta7 = () => {
 
     return (
         <div>
-            <h1>Consulta 7 - Evento con más recursos ejecutados en el año {year}</h1>
+            <h1 className={styles.title}>Consulta 7 - Evento con más recursos ejecutados en el año {year}</h1>
             <div>
-                <label htmlFor="year-select">Selecciona un año:</label>
+                <label className={styles.subtitle} htmlFor="year-select">Selecciona un año:</label>
                 <select className={styles.select} id="year-select" value={year} onChange={(e) => setYear(parseInt(e.target.value))}>
                     <option value={2019}>2019</option>
                     <option value={2020}>2020</option>
@@ -32,11 +32,11 @@ const Consulta7 = () => {
                 </select>
             </div>
             <div>
-                <h2>Evento con más recursos ejecutados:</h2>
+                <h2 className={styles.subtitle}>Evento con más recursos ejecutados:</h2>
                 <p>{consultaData.evento_max_recursos}</p>
             </div>
             <div>
-                <h2>Total de recursos ejecutados:</h2>
+                <h2 className={styles.subtitle}>Total de recursos ejecutados:</h2>
                 <p>{consultaData.max_recursos ? formatResources(consultaData.max_recursos) : 'N/A'}</p>
             </div>
         </div>

@@ -16,7 +16,7 @@ import Consulta8 from "../components/Consulta8/Consulta8";
 const Querys = () => {
     return (
         <div className={styles.container}>
-            <h1>UNGRD-DASHBOARD</h1>
+            <h1 className={styles.title}>UNGRD-DASHBOARD</h1>
             <div className={styles.reports}>
 
                 <div className={styles.row}>

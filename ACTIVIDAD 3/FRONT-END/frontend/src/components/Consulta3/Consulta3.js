@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Bar } from 'react-chartjs-2';
+import styles from "./Consulta3.module.css"
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -79,7 +80,7 @@ const Consulta3 = () => {
 
     return (
         <div>
-            <h1>Top 5 Events Chart</h1>
+            <h1 className={styles.title}>Consulta 3: Gráfico top 5 de eventos</h1>
             {loading ? <p>Loading...</p> : <Bar data={chartData} options={options} />}
         </div>
     );

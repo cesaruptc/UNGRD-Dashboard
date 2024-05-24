@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Chart from 'react-apexcharts';
+import styles from './Consulta2.module.css'
 
 const Consulta2 = () => {
     const [eventData, setEventData] = useState([]);
@@ -47,7 +48,7 @@ const Consulta2 = () => {
 
     return (
         <div>
-            <h1>Consulta 2: Eventos por año</h1>
+            <h1 className={styles.title}>Consulta 2: Eventos por año</h1>
             <Chart options={options} series={series} type="line" height={350} />
         </div>
     );

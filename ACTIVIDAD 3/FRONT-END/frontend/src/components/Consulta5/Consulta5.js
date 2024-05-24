@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import styles from "./Consulta5.module.css"
 
 const Consulta5 = () => {
     const [department, setDepartment] = useState('');
@@ -16,7 +17,7 @@ const Consulta5 = () => {
 
     return (
         <div>
-            <h2>Department with Most Mass Movements:</h2>
+            <h2 className={styles.title}>Consulta 5: Departamento con mayor movimiento de masa:</h2>
             <label>{department}</label>
         </div>
     );

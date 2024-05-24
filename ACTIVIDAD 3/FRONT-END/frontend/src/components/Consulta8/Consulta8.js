@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Chart from 'react-apexcharts';
-
+import styles from "./Consulta8.module.css"
 const Consulta8 = () => {
     const [chartData, setChartData] = useState({
         series: [{
@@ -62,7 +62,7 @@ const Consulta8 = () => {
 
     return (
         <div>
-            <h2>Events Over Time</h2>
+            <h2 className={styles.title}>Consulta 8: Eventos en el tiempo</h2>
             <Chart
                 options={chartData.options}
                 series={chartData.series}
