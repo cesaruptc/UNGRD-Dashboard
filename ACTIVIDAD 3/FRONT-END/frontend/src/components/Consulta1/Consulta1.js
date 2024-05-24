@@ -6,7 +6,7 @@ const Consulta1 = () => {
     const [top5Events, setTop5Events] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/events/top5')
+        axios.get('https://ceesar1703.pythonanywhere.com/consulta1')
             .then(response => {
                 setTop5Events(response.data);
             })

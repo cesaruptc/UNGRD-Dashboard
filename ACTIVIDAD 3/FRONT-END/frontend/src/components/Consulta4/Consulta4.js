@@ -7,7 +7,7 @@ const Consulta4 = () => {
     const [selectedYear, setSelectedYear] = useState(2019); // Inicialmente seleccionamos el año 2019
 
     useEffect(() => {
-        axios.get(`https://ceesar1703.pythonanywhere.com/consulta5/${selectedYear}`)
+        axios.get(`https://ceesar1703.pythonanywhere.com/consulta4/${selectedYear}`)
             .then(response => {
                 setConsultaData(response.data);
             })

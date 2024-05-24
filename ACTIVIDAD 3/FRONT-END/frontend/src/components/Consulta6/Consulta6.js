@@ -30,7 +30,7 @@ const Consulta6 = () => {
     });
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/events/consulta6')
+        axios.get('https://ceesar1703.pythonanywhere.com/consulta6')
             .then(response => {
                 const data = response.data;
                 const series = Object.values(data);

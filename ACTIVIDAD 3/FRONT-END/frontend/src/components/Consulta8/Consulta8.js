@@ -36,7 +36,7 @@ const Consulta8 = () => {
     });
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/events/consulta8')
+        axios.get('https://ceesar1703.pythonanywhere.com/consulta8')
             .then(response => {
                 const data = response.data;
                 const seriesData = Object.values(data);

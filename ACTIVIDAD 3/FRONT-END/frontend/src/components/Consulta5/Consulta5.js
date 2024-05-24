@@ -5,7 +5,7 @@ const Consulta5 = () => {
     const [department, setDepartment] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:5000/events/movimientos_en_masa')
+        axios.get('https://ceesar1703.pythonanywhere.com/consulta5')
             .then(response => {
                 setDepartment(response.data);
             })

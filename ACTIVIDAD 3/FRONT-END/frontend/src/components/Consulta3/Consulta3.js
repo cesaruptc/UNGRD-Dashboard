@@ -38,7 +38,7 @@ const Consulta3 = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/events/top5')
+        axios.get('https://ceesar1703.pythonanywhere.com/consulta1')
             .then(response => {
                 const data = response.data;
                 const labels = Object.keys(data);
