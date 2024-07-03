@@ -1,0 +1,26 @@
+.title {
+    color: #B8B8CF;
+    font-family: "Inter", sans-serif;
+    text-align: left;
+    font-size: 100%;
+    margin: 10px;
+}
+
+.legend {
+    display: flex;
+    align-items: center;
+    height: 20%;
+}
+
+.report {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.reportContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}

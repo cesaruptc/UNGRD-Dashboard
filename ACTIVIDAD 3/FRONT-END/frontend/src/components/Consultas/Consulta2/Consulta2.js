@@ -35,10 +35,11 @@ const Consulta2 = () => {
             type: 'line'
         },
         xaxis: {
-            categories: Object.keys(eventCounts)
-        },
-        colors: ['#1F3075'],
+            categories: Object.keys(eventCounts),
 
+        },
+
+        colors: ['#1F3075'],
     };
 
     const series = [{

@@ -1,15 +1,13 @@
 
 import './App.css';
-import Querys from './pages/Querys';
+import Dashboard from "./pages/Dashboard/Dashboard";
+import {YearProvider} from "./context/YearContext";
 
 function App() {
   return (
-    <div className="App">
-
-        <div className={"flex flex-col"}>
-            <Querys/>
-        </div>
-    </div>
+    <YearProvider className="App">
+        <Dashboard/>
+    </YearProvider>
   );
 }
 

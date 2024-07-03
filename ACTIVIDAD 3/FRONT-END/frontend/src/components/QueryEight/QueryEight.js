@@ -1,29 +1,24 @@
-// src/Consulta3.js
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import axios from 'axios';
 import { Bar } from 'react-chartjs-2';
-import styles from "./Consulta3.module.css"
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
+import styles from "./QueryEight.module.css"
+import {YearContext} from "../../context/YearContext";
+import { Chart as ChartJS, ArcElement, LineElement, BarElement, PointElement, Title, Tooltip, Legend, CategoryScale, LinearScale } from 'chart.js';
+
+ChartJS.register(
+    ArcElement,
+    LineElement,
     BarElement,
+    PointElement,
     Title,
     Tooltip,
     Legend,
-} from 'chart.js';
-
-// Register Chart.js components
-ChartJS.register(
     CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend
+    LinearScale
 );
 
-const Consulta3 = () => {
+const QueryEight = () => {
+    const {year} = useContext(YearContext);
     const [chartData, setChartData] = useState({
         labels: [],
         datasets: [
@@ -39,7 +34,7 @@ const Consulta3 = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('https://ceesar1703.pythonanywhere.com/consulta1')
+        axios.get(`https://ceesar1703.pythonanywhere.com/consulta1/${year}`)
             .then(response => {
                 const data = response.data;
                 const labels = Object.keys(data);
@@ -63,27 +58,49 @@ const Consulta3 = () => {
                 console.error('Error fetching the top 5 events:', error);
                 setLoading(false);
             });
-    }, []);
+    }, [year]);
 
     const options = {
         responsive: true,
         plugins: {
             legend: {
                 position: 'top',
+                label: {
+                    color: '#B8B8CF',
+                }
             },
             title: {
-                display: true,
+                display: false,
                 text: 'Top 5 Departments by Number of Events',
             },
         },
+        scales: {
+            x: {
+                ticks: {
+                    color: '#B8B8CF',
+                },
+            },
+            y: {
+                ticks: {
+                    color: '#B8B8CF',
+                },
+            },
+        },
+
     };
 
     return (
-        <div>
-            <h1 className={styles.title}>Consulta 3: Gráfico top 5 de eventos</h1>
-            {loading ? <p>Loading...</p> : <Bar data={chartData} options={options} />}
+        <div className={styles.reportContent}>
+            <div className={styles.legend}>
+                <h1 className={styles.title}>Departamentos por N° de eventos</h1>
+            </div>
+            <div className={styles.report}>
+                <div className={styles.reportGraphic}>
+                    {loading ? <p>Loading...</p> : <Bar data={chartData} options={options} height={'210'} />}
+                </div>
+            </div>
         </div>
     );
 };
 
-export default Consulta3;
+export default QueryEight;

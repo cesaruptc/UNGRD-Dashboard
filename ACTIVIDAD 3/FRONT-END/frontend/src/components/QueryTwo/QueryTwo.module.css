@@ -1,0 +1,42 @@
+.reportContent {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.legend {
+    display: flex;
+    align-items: center;
+    height: 35%;
+}
+
+.report {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65%;
+}
+
+.title {
+    color: #B8B8CF;
+    font-family: "Inter", sans-serif;
+    text-align: left;
+    font-size: 100%;
+    margin: 10px;
+}
+
+.department_name {
+    color: aliceblue;
+    font-size: 30px;
+    font-family: Inter, serif;
+    text-shadow:
+            0 0 5px rgba(6,93,131,1),
+            0 0 10px rgba(6,93,131,1),
+            0 0 20px rgba(6,93,131,1),
+            0 0 40px rgba(7, 44, 60,1),
+            0 0 80px rgba(7, 44, 60,1),
+            0 0 90px rgba(7, 44, 60,1),
+            0 0 100px rgba(7, 44, 60,1),
+            0 0 140px rgba(7, 44, 60,1),
+            0 0 180px rgba(7, 44, 60,1);
+}

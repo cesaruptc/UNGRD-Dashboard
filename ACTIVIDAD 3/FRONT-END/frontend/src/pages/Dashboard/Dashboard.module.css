@@ -1,0 +1,227 @@
+.dashboard {
+    margin: 10px;
+}
+
+.title {
+    color: white;
+    font-family: "Times New Roman", sans-serif, bold;
+    font-size: 50px;
+    margin: 10px;
+    font-weight: bold;
+    text-shadow:
+            0 0 5px rgba(6,93,131,1),
+            0 0 10px rgba(6,93,131,1),
+            0 0 20px rgba(6,93,131,1),
+            0 0 40px rgba(7, 44, 60,1),
+            0 0 80px rgba(7, 44, 60,1),
+            0 0 90px rgba(7, 44, 60,1),
+            0 0 100px rgba(7, 44, 60,1),
+            0 0 140px rgba(7, 44, 60,1),
+            0 0 180px rgba(7, 44, 60,1);
+}
+
+.year {
+    display: flex;
+    margin-left: 20px;
+}
+
+.date_box {
+    display: flex;
+    width: 20vw;
+    height: 50px;
+    border-radius: 5px;
+    background-color: rgba(71, 69, 112, 0.6);
+}
+
+.label_year {
+    display: flex;
+    color: white;
+    font-size: 20px;
+    font-family: Inter, sans-serif;
+    margin-left: 20px;
+    align-items: center;
+}
+
+.select {
+    width: 70px;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+    font-family: Inter, sans-serif;
+    color: white;
+}
+
+.select option {
+    color: black    ;
+    background: transparent;
+}
+
+.querys {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.first_querys {
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.query_first_line {
+    background-color: rgba(71, 69, 112, 0.6);
+    width: 20vw;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.second_line {
+    display: flex;
+    justify-content: space-between;
+    height: 70vh;
+}
+
+.query_top_five {
+    width: 20vw;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgba(71, 69, 112, 0.6);
+}
+
+.graphics {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+}
+
+.graphics_line_one, .graphics_line_two {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 49%;
+}
+
+.graphics_line_one {
+    margin-bottom: .5%;
+}
+
+.graphics_line_two {
+    margin-top: .5%;
+}
+
+.report_graphic {
+    width: 20vw;
+    height: 100%;
+    border-radius: 5px;
+    background-color: rgba(71, 69, 112, 0.6);
+}
+
+.footerContent {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 100%;
+    height: 180px;
+}
+
+.line {
+    width: 100%;
+    height: 5px;
+    background-color: #B8B8CF;
+    box-shadow: 0 0 5px rgba(6,93,131,1),
+    0 0 10px rgba(6,93,131,1),
+    0 0 20px rgba(6,93,131,1),
+    0 0 40px rgba(7, 44, 60,1),
+    0 0 80px rgba(7, 44, 60,1),
+    0 0 90px rgba(7, 44, 60,1),
+    0 0 100px rgba(7, 44, 60,1),
+    0 0 140px rgba(7, 44, 60,1),
+    0 0 180px rgba(7, 44, 60,1);;
+}
+
+.contactContent {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    color: #B8B8CF;
+    margin-top: 35px;
+}
+
+.info {
+    color: #B8B8CF;
+    font-family: Inter, serif;
+    font-size: 15px;
+}
+
+.name {
+    color: white;
+    font-family: "Times New Roman", sans-serif, bold;
+    font-size: 15px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    text-shadow:
+            0 0 5px rgba(6,93,131,1),
+            0 0 10px rgba(6,93,131,1),
+            0 0 20px rgba(6,93,131,1),
+            0 0 40px rgba(7, 44, 60,1),
+            0 0 80px rgba(7, 44, 60,1),
+            0 0 90px rgba(7, 44, 60,1),
+            0 0 100px rgba(7, 44, 60,1),
+            0 0 140px rgba(7, 44, 60,1),
+            0 0 180px rgba(7, 44, 60,1);
+}
+
+.github {
+    margin-top: 35px;
+}
+
+.imagegit {
+    box-shadow:
+            0 0 5px rgba(6,93,131,1),
+            0 0 10px rgba(6,93,131,1),
+            0 0 20px rgba(6,93,131,1),
+            0 0 40px rgba(7, 44, 60,1),
+            0 0 80px rgba(7, 44, 60,1),
+            0 0 90px rgba(7, 44, 60,1),
+            0 0 100px rgba(7, 44, 60,1),
+            0 0 140px rgba(7, 44, 60,1),
+            0 0 180px rgba(7, 44, 60,1);
+    border-radius: 50%;
+}
+
+.lastInfo {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.infoUNGRD {
+    color: #B8B8CF;
+    font-family: "Times New Roman", sans-serif, bold;
+    font-size: 15px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    text-shadow:
+            0 0 5px rgba(6,93,131,1),
+            0 0 10px rgba(6,93,131,1),
+            0 0 20px rgba(6,93,131,1),
+            0 0 40px rgba(7, 44, 60,1),
+            0 0 80px rgba(7, 44, 60,1),
+            0 0 90px rgba(7, 44, 60,1),
+            0 0 100px rgba(7, 44, 60,1),
+            0 0 140px rgba(7, 44, 60,1),
+            0 0 180px rgba(7, 44, 60,1);
+}
