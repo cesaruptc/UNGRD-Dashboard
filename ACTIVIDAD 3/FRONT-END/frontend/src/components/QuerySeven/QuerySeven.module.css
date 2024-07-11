@@ -8,15 +8,15 @@
     font-family: "Inter", sans-serif;
     text-align: left;
     font-size: 90%;
-    margin: 10px;
+    margin: 0.625rem;
 }
 
 .elements {
     text-align: center;
     color: aliceblue;
-    font-size: 25px;
+    font-size: 1.563rem;
     font-family: Inter, serif;
-    margin-top: 45px;
+    margin-top: 2.813rem;
     text-shadow:
             0 0 5px rgba(6,93,131,1),
             0 0 10px rgba(6,93,131,1),
